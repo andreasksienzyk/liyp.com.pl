@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language in Your Pocket - Fast-Track Language Learning in Warsaw</title>
+    <meta name="description" content="Professional language teaching in Warsaw. Reach A2 in 60 hours with our proven flashcard-based method. Personalized German language instruction with automatic vocabulary generation.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #2C3E66;
+            --red: #C13A4B;
+            --light-gray: #F5F7FA;
+            --dark-gray: #4A5568;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.875rem;
+            color: var(--red);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--navy);
+            background: transparent;
+            color: var(--navy);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2b4d 100%);
+    color: #2D3748;  /* Dunkles Grau für beste Lesbarkeit */
+    padding: 4rem 0;
+    text-align: center;
+}
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--red);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(193, 58, 75, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        /* Method Section */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .method-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .method-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--red);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--red);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 1rem;
+        }
+
+        .testimonial-date {
+            font-size: 0.875rem;
+            color: var(--dark-gray);
+            opacity: 0.7;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .rating {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--red);
+        }
+
+        .rating-stars {
+            color: #FFD700;
+            font-size: 2rem;
+        }
+
+        .rating-text {
+            color: var(--dark-gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--navy);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background: #a02f3c;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-switcher {
+                flex-wrap: wrap;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Language-specific content visibility */
+        [data-lang-content] {
+            display: none;
+        }
+
+        [data-lang-content].active {
+            display: block;
+        }
+
+        .inline-lang {
+            display: none;
+        }
+
+        .inline-lang.active {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%232C3E66'/%3E%3Ctext x='25' y='30' font-family='Arial' font-size='12' fill='white' text-anchor='middle'%3ELYP%3C/text%3E%3C/svg%3E" alt="Logo" class="logo">
+                    <div class="logo-text">
+                        <h1>Language in Your Pocket</h1>
+                        <p>Fast-Track Language Learning</p>
+                    </div>
+                </div>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="de">Deutsch</button>
+                    <button class="lang-btn" data-lang="pl">Polski</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 data-lang-content="en" class="active">From Zero to Fluent - The Fast Track Way</h2>
+            <h2 data-lang-content="de">Von Null auf Fließend - Der Schnellweg</h2>
+            <h2 data-lang-content="pl">Od Zera do Biegłości - Szybką Drogą</h2>
+            
+            <p data-lang-content="en" class="active">Reach A2 in 60 hours. Then dive deep into real German.</p>
+            <p data-lang-content="de">Erreichen Sie A2 in 60 Stunden. Dann tauchen Sie tief in echtes Deutsch ein.</p>
+            <p data-lang-content="pl">Osiągnij poziom A2 w 60 godzin. Następnie zanurz się w prawdziwym niemieckim.</p>
+            
+            <a href="#contact" class="cta-button">
+                <span data-lang-inline="en" class="inline-lang active">Start Learning</span>
+                <span data-lang-inline="de" class="inline-lang">Jetzt Lernen</span>
+                <span data-lang-inline="pl" class="inline-lang">Zacznij Naukę</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- The Method -->
+    <section id="method">
+        <div class="container">
+            <h2 data-lang-content="en" class="active">The Method</h2>
+            <h2 data-lang-content="de">Die Methode</h2>
+            <h2 data-lang-content="pl">Metoda</h2>
+
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-number">1</div>
+                    <h3 data-lang-content="en" class="active">Beginner Fast-Track</h3>
+                    <h3 data-lang-content="de">Anfänger Schnellkurs</h3>
+                    <h3 data-lang-content="pl">Szybki Start dla Początkujących</h3>
+                    
+                    <p data-lang-content="en" class="active">A1 → A2 in just 60 hours with pre-prepared flashcard decks covering chapters 1-8. Maximum efficiency, minimum time.</p>
+                    <p data-lang-content="de">A1 → A2 in nur 60 Stunden mit vorbereiteten Karteikarten für Kapitel 1-8. Maximale Effizienz, minimale Zeit.</p>
+                    <p data-lang-content="pl">A1 → A2 w zaledwie 60 godzinach z przygotowanymi fiszkami obejmującymi rozdziały 1-8. Maksymalna wydajność, minimalny czas.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-number">2</div>
+                    <h3 data-lang-content="en" class="active">Advanced Immersion</h3>
+                    <h3 data-lang-content="de">Fortgeschrittene Immersion</h3>
+                    <h3 data-lang-content="pl">Zaawansowane Zanurzenie</h3>
+                    
+                    <p data-lang-content="en" class="active">B1+: Newspaper articles, videos, and authentic materials for true language mastery. Real German from real sources.</p>
+                    <p data-lang-content="de">B1+: Zeitungsartikel, Videos und authentische Materialien für echte Sprachbeherrschung. Echtes Deutsch aus echten Quellen.</p>
+                    <p data-lang-content="pl">B1+: Artykuły prasowe, filmy i autentyczne materiały dla prawdziwego opanowania języka. Prawdziwy niemiecki z prawdziwych źródeł.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-number">3</div>
+                    <h3 data-lang-content="en" class="active">Automatic Flashcards</h3>
+                    <h3 data-lang-content="de">Automatische Karteikarten</h3>
+                    <h3 data-lang-content="pl">Automatyczne Fiszki</h3>
+                    
+                    <p data-lang-content="en" class="active">Unknown words from your texts are automatically converted into flashcards. After each lesson, receive your personalized error list with audio pronunciation.</p>
+                    <p data-lang-content="de">Unbekannte Wörter aus Ihren Texten werden automatisch in Karteikarten umgewandelt. Nach jeder Lektion erhalten Sie Ihre personalisierte Fehlerliste mit Audio-Aussprache.</p>
+                    <p data-lang-content="pl">Nieznane słowa z twoich tekstów są automatycznie konwertowane na fiszki. Po każdej lekcji otrzymujesz spersonalizowaną listę błędów z wymową audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 data-lang-content="en" class="active">Success Stories</h2>
+            <h2 data-lang-content="de">Erfolgsgeschichten</h2>
+            <h2 data-lang-content="pl">Historie Sukcesu</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-lang-content="en" class="active"><strong>From zero to studying medicine in German in 10 months!</strong> "I started learning German from absolute zero in October. Thanks to Andreas's method with automatic flashcards and error correction after each lesson, I was able to study medicine in Germany on Erasmus by June. The system is simply genius!"</p>
+                    <p data-lang-content="de"><strong>Von Null zum Medizinstudium auf Deutsch in 10 Monaten!</strong> "Ich habe im Oktober angefangen, Deutsch von absolut Null zu lernen. Dank Andreas' Methode mit automatischen Karteikarten und Fehlerkorrektur nach jeder Lektion konnte ich im Juni Medizin in Deutschland im Erasmus-Programm studieren. Das System ist einfach genial!"</p>
+                    <p data-lang-content="pl"><strong>Od zera do studiowania medycyny po niemiecku w 10 miesięcy!</strong> "Zaczęłam uczyć się niemieckiego od absolutnego zera w październiku. Dzięki metodzie Andreasa z automatycznymi fiszkami i korektą błędów po każdej lekcji, mogłam studiować medycynę w Niemczech na Erasmusie w czerwcu. System jest po prostu genialny!"</p>
+                    <div class="testimonial-author">— Agnieszka</div>
+                    <div class="testimonial-date">September 2014</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-lang-content="en" class="active"><strong>Everything you need is provided on a silver platter.</strong> "The entire knowledge is served to you like on a plate! After lessons, you immediately receive flashcards on your phone with new words and their translations. All mistakes are corrected and sent by email with audio files. The progress is visible after just a few weeks. I wouldn't change Andreas for any other teacher!"</p>
+                    <p data-lang-content="de"><strong>Alles, was Sie brauchen, wird auf einem Silbertablett serviert.</strong> "Das gesamte Wissen wird Ihnen wie auf einem Tablett serviert! Nach den Lektionen erhalten Sie sofort Karteikarten auf Ihrem Handy mit neuen Wörtern und ihren Übersetzungen. Alle Fehler werden korrigiert und per E-Mail mit Audiodateien gesendet. Der Fortschritt ist schon nach wenigen Wochen sichtbar. Ich würde Andreas gegen keinen anderen Lehrer tauschen!"</p>
+                    <p data-lang-content="pl"><strong>Wszystko, czego potrzebujesz, podane na srebrnej tacy.</strong> "Cała wiedza jest podawana jak na talerzu! Po lekcjach od razu dostajesz fiszki na telefonie z nowymi słowami i ich tłumaczeniami. Wszystkie błędy są poprawiane i wysyłane mailem z plikami audio. Postępy widać już po kilku tygodniach. Nie zamieniłabym Andreasa na innego nauczyciela!"</p>
+                    <div class="testimonial-author">— Michał</div>
+                    <div class="testimonial-date">May 2015</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-lang-content="en" class="active"><strong>Fastest progress I've ever experienced!</strong> "The pace of learning is simply incredible - it's hard to believe you can make such big progress in such a short time. After only a few months of lessons, I wrote my CV and motivation letter for a foreign scholarship in German - on my own! Andreas is a great pedagogue who really loves teaching."</p>
+                    <p data-lang-content="de"><strong>Der schnellste Fortschritt, den ich je erlebt habe!</strong> "Das Lerntempo ist einfach unglaublich - man kann kaum glauben, dass man in so kurzer Zeit so große Fortschritte machen kann. Nach nur wenigen Monaten Unterricht habe ich meinen Lebenslauf und mein Motivationsschreiben für ein Auslandsstipendium auf Deutsch geschrieben - ganz alleine! Andreas ist ein großartiger Pädagoge, der das Unterrichten wirklich liebt."</p>
+                    <p data-lang-content="pl"><strong>Najszybszy postęp, jakiego kiedykolwiek doświadczyłam!</strong> "Tempo nauki jest po prostu niesamowite - trudno uwierzyć, że można w tak krótkim czasie zrobić tak duże postępy. Po zaledwie kilku miesiącach nauki napisałam samodzielnie CV i list motywacyjny na stypendium zagraniczne po niemiecku! Andreas to świetny pedagog, który naprawdę uwielbia uczyć."</p>
+                    <div class="testimonial-author">— Sylwia</div>
+                    <div class="testimonial-date">July 2015</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Andreas -->
+    <section id="about">
+        <div class="container">
+            <h2 data-lang-content="en" class="active">About Andreas</h2>
+            <h2 data-lang-content="de">Über Andreas</h2>
+            <h2 data-lang-content="pl">O Andreasie</h2>
+
+            <div class="about-content">
+                <div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='%232C3E66'/%3E%3Ctext x='150' y='210' font-family='Arial' font-size='24' fill='white' text-anchor='middle'%3EAndreas%3C/text%3E%3C/svg%3E" alt="Andreas Ksienzyk" class="about-image">
+                    
+                    <div class="rating">
+                        <div class="rating-number">5.0</div>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-text">
+                            <span data-lang-inline="en" class="inline-lang active">21 Reviews</span>
+                            <span data-lang-inline="de" class="inline-lang">21 Bewertungen</span>
+                            <span data-lang-inline="pl" class="inline-lang">21 Opinii</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p data-lang-content="en" class="active" style="font-size: 1.125rem; line-height: 1.8;">
+                        <strong>I'm not a salesman - I'm a very, very good teacher.</strong><br><br>
+                        
+                        My philosophy is simple: teach beginners as quickly as possible with pre-prepared flashcard decks, then immerse them in real German through newspaper articles and authentic materials.<br><br>
+                        
+                        After each lesson, you receive a detailed error list (PDF + MP3) with corrections and pronunciation. Unknown words from your texts are automatically converted into flashcards and sent directly to your phone.<br><br>
+                        
+                        <strong>Format:</strong> Online + Warsaw<br>
+                        <strong>Rate:</strong> 180 PLN / 60 min<br><br>
+                        
+                        All 21 reviews on <a href="https://www.e-korepetycje.net/wirliebendeutsch" target="_blank" rel="noopener noreferrer">e-korepetycje.net</a> are 5 stars. The method works.
+                    </p>
+
+                    <p data-lang-content="de" style="font-size: 1.125rem; line-height: 1.8;">
+                        <strong>Ich bin kein Verkäufer - ich bin ein sehr, sehr guter Lehrer.</strong><br><br>
+                        
+                        Meine Philosophie ist einfach: Anfänger so schnell wie möglich mit vorbereiteten Karteikarten unterrichten, dann in echtes Deutsch durch Zeitungsartikel und authentische Materialien eintauchen.<br><br>
+                        
+                        Nach jeder Lektion erhalten Sie eine detaillierte Fehlerliste (PDF + MP3) mit Korrekturen und Aussprache. Unbekannte Wörter aus Ihren Texten werden automatisch in Karteikarten umgewandelt und direkt auf Ihr Handy gesendet.<br><br>
+                        
+                        <strong>Format:</strong> Online + Warschau<br>
+                        <strong>Preis:</strong> 180 PLN / 60 Min<br><br>
+                        
+                        Alle 21 Bewertungen auf <a href="https://www.e-korepetycje.net/wirliebendeutsch" target="_blank" rel="noopener noreferrer">e-korepetycje.net</a> sind 5 Sterne. Die Methode funktioniert.
+                    </p>
+
+                    <p data-lang-content="pl" style="font-size: 1.125rem; line-height: 1.8;">
+                        <strong>Nie jestem sprzedawcą - jestem bardzo, bardzo dobrym nauczycielem.</strong><br><br>
+                        
+                        Moja filozofia jest prosta: uczyć początkujących jak najszybciej z przygotowanymi fiszkami, a następnie zanurzyć ich w prawdziwym niemieckim poprzez artykuły prasowe i autentyczne materiały.<br><br>
+                        
+                        Po każdej lekcji otrzymujesz szczegółową listę błędów (PDF + MP3) z poprawkami i wymową. Nieznane słowa z twoich tekstów są automatycznie konwertowane na fiszki i wysyłane bezpośrednio na twój telefon.<br><br>
+                        
+                        <strong>Format:</strong> Online + Warszawa<br>
+                        <strong>Cena:</strong> 180 PLN / 60 min<br><br>
+                        
+                        Wszystkie 21 opinii na <a href="https://www.e-korepetycje.net/wirliebendeutsch" target="_blank" rel="noopener noreferrer">e-korepetycje.net</a> to 5 gwiazdek. Metoda działa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <h2 data-lang-content="en" class="active">Contact</h2>
+        <h2 data-lang-content="de">Kontakt</h2>
+        <h2 data-lang-content="pl">Kontakt</h2>
+
+        <div class="contact-form">
+            <!-- >>> HIER IST DEIN FUNKTIONIERENDES FORMPREE-FORMULAR <<< -->
+            <form action="https://formspree.io/f/xnjbpppv" method="POST">
+                
+                <!-- Name -->
+                <div class="form-group">
+                    <label data-lang-content="en" class="active">Name</label>
+                    <label data-lang-content="de">Name</label>
+                    <label data-lang-content="pl">Imię</label>
+                    <input type="text" name="name" placeholder=" " required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder=" " required>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label data-lang-content="en" class="active">Message</label>
+                    <label data-lang-content="de">Nachricht</label>
+                    <label data-lang-content="pl">Wiadomość</label>
+                    <textarea name="message" placeholder=" " required></textarea>
+                </div>
+
+                <!-- >>> WICHTIG: DSGVO/RODO Checkbox (rechtlich Pflicht!) <<< -->
+                <div class="form-group">
+                    <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                        <input type="checkbox" name="consent" required style="width: auto; margin-top: 0.25rem; flex-shrink: 0;">
+                        <span style="font-size: 0.9rem; line-height: 1.4;">
+                            <!-- Deutsch -->
+                            <span data-lang-content="de">
+                                Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. 
+                                <a href="/datenschutz.html" target="_blank" style="color: var(--red);">Datenschutzerklärung</a>.
+                            </span>
+                            <!-- Englisch (default) -->
+                            <span data-lang-content="en" class="active">
+                                I agree that my data will be processed to answer my inquiry. 
+                                <a href="/privacy.html" target="_blank" style="color: var(--red);">Privacy Policy</a>.
+                            </span>
+                            <!-- Polnisch -->
+                            <span data-lang-content="pl">
+                                Wyrażam zgodę na przetwarzanie moich danych w celu udzielenia odpowiedzi. 
+                                <a href="/polityka-prywatnosci.html" target="_blank" style="color: var(--red);">Polityka Prywatności</a>.
+                            </span>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Submit Button (mehrsprachig) -->
+                <button type="submit">
+                    <span data-lang-inline="en" class="inline-lang active">Send Message</span>
+                    <span data-lang-inline="de" class="inline-lang">Nachricht Senden</span>
+                    <span data-lang-inline="pl" class="inline-lang">Wyślij Wiadomość</span>
+                </button>
+
+                <!-- Optional: Honeypot gegen Spam (unsichtbar für Menschen) -->
+                <input type="text" name="_gotcha" style="display: none;">
+                
+                <!-- Optional: Sprache mit senden, damit Du weißt, welches Formular der Nutzer gesehen hat -->
+                <input type="hidden" name="_language" id="current-lang-form" value="en">
+                
+            </form>
+            <!-- >>> HIER ENDET DEIN FORMPREE-FORMULAR <<< -->
+            
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--dark-gray);">
+                <span data-lang-content="en">✓ Form protected by Formspree. No spam.</span>
+                <span data-lang-content="de">✓ Geschützt durch Formspree. Kein Spam.</span>
+                <span data-lang-content="pl">✓ Chronione przez Formspree. Bez spamu.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Language in Your Pocket | Andreas Ksienzyk | <a href="#privacy">Privacy Policy</a> | <a href="#imprint">Impressum</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switcher - FIXED VERSION
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            // Select ONLY content elements, NOT the buttons themselves
+            const langContentElements = document.querySelectorAll('[data-lang-content]');
+            const langInlineElements = document.querySelectorAll('[data-lang-inline]');
+            
+            // Initialize with English
+            let currentLang = 'en';
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    
+                    if (selectedLang === currentLang) {
+                        return; // Already selected
+                    }
+                    
+                    // Update active button
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update content elements
+                    langContentElements.forEach(el => {
+                        if (el.getAttribute('data-lang-content') === selectedLang) {
+                            el.classList.add('active');
+                        } else {
+                            el.classList.remove('active');
+                        }
+                    });
+                    
+                    // Update inline elements
+                    langInlineElements.forEach(el => {
+                        if (el.getAttribute('data-lang-inline') === selectedLang) {
+                            el.classList.add('active');
+                        } else {
+                            el.classList.remove('active');
+                        }
+                    });
+                    
+                    // Update current language
+                    currentLang = selectedLang;
+                    // Sprache fürs Formular mit senden
+const langInput = document.getElementById('current-lang-form');
+if (langInput) {
+    langInput.value = currentLang;
+}
+                    // Update HTML lang attribute for accessibility
+                    document.documentElement.setAttribute('lang', selectedLang);
+                });
+            });
+            
+            // Form submission handler
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submission functionality will be added when connected to a backend service.');
+                    // In production, use Formspree or similar service
+                });
+            }
+            
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+    // AJAX Submit für Formspree – keine Weiterleitung
+    (function() {
+        const form = document.querySelector('form[action*="formspree"]');
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const originalHTML = btn.innerHTML;
+                const lang = document.documentElement.lang;
+                
+                // Ladezustand anzeigen
+                if (lang === 'de') btn.innerHTML = 'Wird gesendet...';
+                else if (lang === 'pl') btn.innerHTML = 'Wysyłanie...';
+                else btn.innerHTML = 'Sending...';
+                btn.disabled = true;
+                
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: new FormData(this),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        // Erfolgsmeldung
+                        if (lang === 'de') alert('✓ Nachricht gesendet! Ich melde mich bald.');
+                        else if (lang === 'pl') alert('✓ Wiadomość wysłana! Odpiszę wkrótce.');
+                        else alert('✓ Message sent! I\'ll get back to you soon.');
+                        this.reset();
+                    } else {
+                        // Fehlermeldung
+                        if (lang === 'de') alert('✗ Fehler. Bitte direkt mailen: kontakt@liyp.com.pl');
+                        else if (lang === 'pl') alert('✗ Błąd. Proszę napisać bezpośrednio: kontakt@liyp.com.pl');
+                        else alert('✗ Error. Please email directly: kontakt@liyp.com.pl');
+                    }
+                } catch {
+                    alert('✗ Network error. Bitte direkt mailen / Please email directly.');
+                }
+                
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>
